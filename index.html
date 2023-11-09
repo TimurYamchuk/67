@@ -132,3 +132,133 @@
     </div>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .confirmation-container {
+            width: 500px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-weight: bold;
+            color: #4caf50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .step-container {
+            display: grid;
+            gap: 12px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .radio-container {
+            margin-bottom: 12px;
+        }
+
+        .radio-container label {
+            margin-right: 20px;
+            color: #555;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h2>Confirmation Page</h2>
+
+        <p>Step 1: Personal Information</p>
+        <div class="step-container">
+            <label for="name">Name: <input type="text" id="name" name="name" pattern="[a-zA-Z ]+" title="Only letters and spaces are allowed" required></label>
+
+            <label for="phone">Phone: <input type="tel" id="phone" name="phone" pattern="\d{10}" title="Please enter a valid 10-digit phone number" required></label>
+
+            <label for="email">Email: <input type="email" id="email" name="email" required></label>
+        </div>
+
+        <p>Step 2: Address Information</p>
+        <div class="step-container">
+            <label for="address">Address: <input type="text" id="address" name="address" required></label>
+
+            <label for="city">City: <input type="text" id="city" name="city" required></label>
+
+            <label for="zipcode">Zip Code: <input type="text" id="zipcode" name="zipcode" pattern="\d{5}" title="Please enter a valid 5-digit zip code" required></label>
+        </div>
+
+        <p>Step 3: Payment Information</p>
+        <div class="step-container">
+            <label>Payment Method:</label>
+            <div class="radio-container">
+                <label for="visa"><input type="radio" id="visa" name="payment" value="visa" required> Visa</label>
+
+                <label for="mastercard"><input type="radio" id="mastercard" name="payment" value="mastercard" required> MasterCard</label>
+
+                <label for="amex"><input type="radio" id="amex" name="payment" value="amex" required> AmEx</label>
+            </div>
+
+            <label for="cardNumber">Card Number: <input type="text" id="cardNumber" name="cardNumber" pattern="\d{16}" title="Please enter a valid 16-digit card number" required></label>
+
+            <label for="securityCode">Security Code: <input type="text" id="securityCode" name="securityCode" pattern="\d{3}" title="Please enter a valid 3-digit security code" required></label>
+
+            <label for="cardHolder">Card Holder Name: <input type="text" id="cardHolder" name="cardHolder" required></label>
+        </div>
+
+        <button type="submit">Buy Now</button>
+    </div>
+</body>
+</html>
