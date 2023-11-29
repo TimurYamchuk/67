@@ -1,33 +1,197 @@
-let fruits = ["Apple", "Banana", "Kivi", "Watermelon", "Avocado"];
+<!DOCTYPE html>
 
-function printArray(header, array) {
-    document.write(header + ": <ul><li>" + array.join("</li><li>") + "</li></ul><br>");
-}
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Массивы</title>
+</head>
+<body>
+    <script>
+// let startNumber = parseInt(prompt("Введите начальное число диапазона:"));
+// let endNumber = parseInt(prompt("Введите конечное число диапазона:"));
 
-printArray("Исходный массив", fruits.slice());  // Используем slice() для создания копии массива перед сортировкой
+// if (!isNaN(startNumber) && !isNaN(endNumber) && startNumber <= endNumber) {
+//     let sum = 0;
 
-fruits.sort();
-printArray("Отсортированный массив", fruits);
+//     for (let i = startNumber; i <= endNumber; i++) {
+//         sum += i;
+//     }
 
-function searchFruit() {
-    let fruitToSearch = prompt("Введите название фрукта для поиска:");
+//     document.write(`Сумма всех чисел в диапазоне от ${startNumber} до ${endNumber} равна: ${sum}`);
+// } else {
+//     document.write("Некорректный ввод. Пожалуйста, введите числа в правильном порядке.");
+// }
 
-    if (fruitToSearch) {
-        const lowerCaseFruit = fruitToSearch.toLowerCase();
-        const index = fruits.indexOf(lowerCaseFruit);
 
-        document.write("Результат поиска: <ul><li>");
 
-        if (index !== -1) {
-            document.write("Фрукт найден! Индекс: " + index);
-        } else {
-            document.write("Фрукт не найден.");
-        }
+// function findGCD(a, b) {
+//     while (b) {
+//         [a, b] = [b, a % b];
+//     }
+//     return Math.abs(a);
+// }
 
-        document.write("</li></ul>");
-    } else {
-        document.write("Введено некорректное значение.");
-    }
-}
+// let number1 = parseInt(prompt("Введите первое число:"));
+// let number2 = parseInt(prompt("Введите второе число:"));
 
-searchFruit();
+// if (!isNaN(number1) && !isNaN(number2)) {
+//     let gcd = findGCD(number1, number2);
+//     document.write(`Наибольший общий делитель чисел ${number1} и ${number2} равен: ${gcd}`);
+// } else {
+//     document.write("Некорректный ввод. Пожалуйста, введите числа.");
+// }
+
+// let number = parseInt(prompt("Введите число:"));
+
+// if (!isNaN(number)) {
+//     document.write(`Делители числа ${number}: `);
+
+//     for (let i = 1; i <= number; i++) {
+//         if (number % i === 0) {
+//             document.write(`${i} `);
+//         }
+//     }
+// } else {
+//     document.write("Некорректный ввод. Пожалуйста, введите число.");
+// }
+
+// let number = parseInt(prompt("Введите число:"));
+
+// if (!isNaN(number)) {
+//     let digitCount = String(Math.abs(number)).length;
+//     document.write(`Количество цифр в числе ${number}: ${digitCount}`);
+// } else {
+//     document.write("Некорректный ввод. Пожалуйста, введите число.");
+// }
+
+// let positiveCount = 0;
+// let negativeCount = 0;
+// let evenCount = 0;
+// let oddCount = 0;
+// let zeroCount = 0;
+
+// for (let i = 0; i < 10; i++) {
+//     let userInput = parseInt(prompt("Введите число:"));
+
+//     if (!isNaN(userInput)) {
+//         if (userInput > 0) {
+//             positiveCount++;
+//         } else if (userInput < 0) {
+//             negativeCount++;
+//         } else {
+//             zeroCount++;
+//         }
+
+//         if (userInput % 2 === 0) {
+//             evenCount++;
+//         } else {
+//             oddCount++;
+//         }
+//     } else {
+//         document.write("Некорректный ввод. Пожалуйста, введите число.");
+//         break;
+//     }
+// }
+
+// document.write(`
+// Положительных чисел: ${positiveCount}
+// Отрицательных чисел: ${negativeCount}
+// Четных чисел: ${evenCount}
+// Нечетных чисел: ${oddCount}
+// Нулей: ${zeroCount}
+// `);
+     
+
+// let continueCalculation = true;
+
+// while (continueCalculation) {
+//     let num1 = parseFloat(prompt("Введите первое число:"));
+//     let operator = prompt("Введите знак операции (+, -, *, /):");
+//     let num2 = parseFloat(prompt("Введите второе число:"));
+
+//     if (!isNaN(num1) && !isNaN(num2)) {
+//         let result;
+
+//         switch (operator) {
+//             case "+":
+//                 result = num1 + num2;
+//                 break;
+//             case "-":
+//                 result = num1 - num2;
+//                 break;
+//             case "*":
+//                 result = num1 * num2;
+//                 break;
+//             case "/":
+//                 result = num2 !== 0 ? num1 / num2 : "Деление на ноль!";
+//                 break;
+//             default:
+//                 result = "Некорректный оператор!";
+//         }
+
+//         document.write(`Результат: ${result}<br>`);
+
+//         let continueAnswer = prompt("Хотите решить еще один пример? (Да/Нет)").toLowerCase();
+//         continueCalculation = continueAnswer === "да";
+//     } else {
+//         document.write("Некорректный ввод. Пожалуйста, введите числа.");
+//         continueCalculation = false;
+//     }
+// }
+
+// let inputNumber = prompt("Введите число:");
+// let shiftAmount = parseInt(prompt("На сколько цифр сдвинуть число:"));
+
+// if (!isNaN(shiftAmount)) {
+//     let shiftedNumber = inputNumber.slice(shiftAmount) + inputNumber.slice(0, shiftAmount);
+//     document.write(`Результат сдвига: ${shiftedNumber}`);
+// } else {
+//     document.write("Некорректный ввод. Пожалуйста, введите число и количество цифр для сдвига.");
+// }
+
+// let daysOfWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+// let continueShowingNextDay = true;
+
+// while (continueShowingNextDay) {
+//     let currentDay = daysOfWeek.shift();
+//     document.write(`${currentDay}. Хотите увидеть следующий день?`);
+
+//     continueShowingNextDay = confirm("Нажмите ОК для продолжения.");
+// }
+
+// for (let i = 2; i <= 9; i++) {
+//     document.write(`Таблица умножения для ${i}:<br>`);
+
+//     for (let j = 1; j <= 10; j++) {
+//         document.write(`${i} * ${j} = ${i * j}<br>`);
+//     }
+
+//     document.write("<br>");
+// }
+
+// let minRange = 0;
+// let maxRange = 100;
+// let guessed = false;
+
+// alert("Загадайте число от 0 до 100.");
+
+// while (!guessed) {
+//     let guess = Math.floor((minRange + maxRange) / 2);
+//     let userResponse = prompt(`Ваше число > ${guess}, < ${guess} или == ${guess}? (Введите >, < или ==)`);
+
+//     if (userResponse === ">") {
+//         minRange = guess + 1;
+//     } else if (userResponse === "<") {
+//         maxRange = guess - 1;
+//     } else if (userResponse === "==") {
+//         guessed = true;
+//         alert(`Ура! Я угадал ваше число ${guess}.`);
+//     } else {
+//         alert("Некорректный ввод. Пожалуйста, введите >, < или ==.");
+//     }
+// }
+
+
+    </script>
+</body>
+</html>м
