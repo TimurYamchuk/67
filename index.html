@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Массивы</title>
-</head>
-<body>
-    <script>
 let fruits = ["Apple", "Banana", "Kivi", "Watermelon", "Avocado"];
 
-document.write("<ul><li>" + fruits.join("</li><li>") + "</li></ul><br>");
+function printArray(header, array) {
+    document.write(header + ": <ul><li>" + array.join("</li><li>") + "</li></ul><br>");
+}
+
+printArray("Исходный массив", fruits.slice());  // Используем slice() для создания копии массива перед сортировкой
 
 fruits.sort();
-document.write("<ul><li>" + fruits.join("</li><li>") + "</li></ul><br>");
+printArray("Отсортированный массив", fruits);
 
 function searchFruit() {
-    let fruitToSearch = prompt("Enter your fruit:");
+    let fruitToSearch = prompt("Введите название фрукта для поиска:");
 
     if (fruitToSearch) {
         const lowerCaseFruit = fruitToSearch.toLowerCase();
         const index = fruits.indexOf(lowerCaseFruit);
 
-        document.write("Serch result: <ul><li>");
+        document.write("Результат поиска: <ul><li>");
 
         if (index !== -1) {
-            document.write("Found! Your index: " + index);
+            document.write("Фрукт найден! Индекс: " + index);
         } else {
-            document.write("Not Found.");
+            document.write("Фрукт не найден.");
         }
 
         document.write("</li></ul>");
     } else {
-        document.write("Invalid entered.");
+        document.write("Введено некорректное значение.");
     }
 }
 
 searchFruit();
-
-     
-    </script>
-</body>
-</html>
