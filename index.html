@@ -1,123 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <title>Массивы</title>
 </head>
 <body>
-    <h1>Hello world</h1>
     <script>
+let fruits = ["Apple", "Banana", "Kivi", "Watermelon", "Avocado"];
 
-// var count = prompt("Введите количество решеток (#):");
-// var result = "";
-// var i = 0;
+document.write("<ul><li>" + fruits.join("</li><li>") + "</li></ul><br>");
 
-// while (i < count) {
-//     result += "#";
-//     i++;
-// }
+fruits.sort();
+document.write("<ul><li>" + fruits.join("</li><li>") + "</li></ul><br>");
 
-// alert(result);
+function searchFruit() {
+    let fruitToSearch = prompt("Enter your fruit:");
 
-// var number = prompt("Введите число:");
-// var i = number;
-// var result = "";
+    if (fruitToSearch) {
+        const lowerCaseFruit = fruitToSearch.toLowerCase();
+        const index = fruits.indexOf(lowerCaseFruit);
 
-// while (i >= 0) {
-//     result += i + " ";
-//     i--;
-// }
+        document.write("Serch result: <ul><li>");
 
-// alert(result);
+        if (index !== -1) {
+            document.write("Found! Your index: " + index);
+        } else {
+            document.write("Not Found.");
+        }
 
-// var base = prompt("Введите число:");
-// var exponent = prompt("Введите степень:");
-// var result = Math.pow(base, exponent);
-
-// alert("Результат: " + result);
-
-// var num1 = prompt("Введите первое число:");
-// var num2 = prompt("Введите второе число:");
-// var commonDivisors = "";
-
-// for (var i = 1; i <= num1 && i <= num2; i++) {
-//     if (num1 % i === 0 && num2 % i === 0) {
-//         commonDivisors += i + " ";
-//     }
-// }
-
-// alert("Общие делители: " + commonDivisors);
-
-// var number = prompt("Введите число для вычисления факториала:");
-// var factorial = 1;
-// var i = 1;
-
-// while (i <= number) {
-//     factorial *= i;
-//     i++;
-// }
-
-// alert("Факториал числа " + number + " равен " + factorial);
-
-// var userAnswer;
-// var correctAnswer = 6;
-
-// do {
-//     userAnswer = prompt("Решите пример: 2 + 2 * 2");
-//     userAnswer = parseInt(userAnswer); 
-
-//     if (userAnswer !== correctAnswer) {
-//         alert("Неверно! Попробуйте еще раз.");
-//     }
-// } while (userAnswer !== correctAnswer);
-
-// alert("Верно! Поздравляем!");
-
-// var number = 1000;
-// var divisions = 0;
-
-// do {
-//     number /= 2;
-//     divisions++;
-// } while (number > 50);
-
-// alert("Полученное число: " + number + "\nКоличество делений: " + divisions);
-
-// var userNumber = parseInt(prompt("Введите число для проверки кратности:"));
-
-// document.write(`Числа от 1 до 100, кратные ${userNumber}:<br>`);
-
-// for (var i = userNumber; i <= 100; i += userNumber) {
-//     document.write(`${i}<br>`);
-// }
-
-// var minRange = parseInt(prompt("Введите минимальное значение диапазона:"));
-// var maxRange = parseInt(prompt("Введите максимальное значение диапазона:"));
-
-// for (var i = minRange; i <= maxRange; i++) {
-//     if ((i - minRange + 1) % 4 === 0) {
-//         console.log(i);
-//     }
-// }
-
-var number = parseInt(prompt("Введите число для проверки:"));
-var isPrime = true;
-
-for (var i = 2; i < number; i++) {
-    if (number % i === 0) {
-        isPrime = false;
-        break; 
+        document.write("</li></ul>");
+    } else {
+        document.write("Invalid entered.");
     }
 }
 
-if (isPrime) {
-    console.log(number + " - простое число");
-} else {
-    console.log(number + " - не простое число");
-}
+searchFruit();
 
-
+     
     </script>
 </body>
 </html>
